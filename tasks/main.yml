@@ -1,5 +1,5 @@
 ---
-
-- include_tasks: docker-installation.yml
-- include_tasks: docker-post-installation.yml
-
+- name: docker installation
+- ansible.builtin.include_tasks: docker-installation.yml
+- name: docker post installation
+- ansible.builtin.include_tasks: docker-post-installation.yml

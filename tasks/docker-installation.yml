@@ -1,11 +1,12 @@
 ---
 - name: Update apt repository
-  apt:
-    update_cache: yes
+  ansible.builtin.apt:
+    update_cache: true
 
 - name: Install packages on Ubuntu
-  apt:
+  ansible.builtin.apt:
     name: "{{ item }}"
+    state: present
   with_items:
   - ca-certificates
   - curl
@@ -13,8 +14,9 @@
   - python3-pip
 
 - name: Install Docker module for Python
-  pip:
+  ansible.builtin.pip:
     name: "{{ item }}"
+    state: present
   with_items:
   - docker
   - docker-compose
@@ -31,8 +33,9 @@
     update_cache: true
 
 - name: Install Docker CE engine
-  apt:
+  ansible.builtin.apt:
     name: "{{ item }}"
+    state: present
   with_items:
   - docker-ce
   - docker-ce-cli

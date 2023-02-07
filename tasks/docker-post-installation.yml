@@ -1,0 +1,13 @@
+---
+
+- name: add user to docker group
+  ansible.builtin.user:
+    name: vagrant
+    groups: docker
+    append: yes
+
+# https://serverfault.com/a/930806
+- name: reset ssh connection to allow user changes to affect ansible user
+  ansible.builtin.meta: reset_connection
+
+...

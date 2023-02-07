@@ -8,18 +8,18 @@
     name: "{{ item }}"
     state: present
   with_items:
-  - ca-certificates
-  - curl
-  - gnupg
-  - python3-pip
+    - ca-certificates
+    - curl
+    - gnupg
+    - python3-pip
 
 - name: Install Docker module for Python
   ansible.builtin.pip:
     name: "{{ item }}"
     state: present
   with_items:
-  - docker
-  - docker-compose
+    - docker
+    - docker-compose
 
 - name: Add docker gpg key
   ansible.builtin.apt_key:
@@ -37,8 +37,8 @@
     name: "{{ item }}"
     state: present
   with_items:
-  - docker-ce
-  - docker-ce-cli
-  - containerd.io
-  - docker-compose-plugin
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+    - docker-compose-plugin
 ...

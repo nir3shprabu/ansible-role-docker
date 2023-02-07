@@ -1,3 +1,7 @@
 ---
-- ansible.builtin.include: docker-installation.yml
-- ansible.builtin.include: docker-post-installation.yml
+- name: Include task list in play
+  ansible.builtin.include_tasks:
+    file: docker-installation.yml
+- name: Include task list in play
+  ansible.builtin.include_tasks:
+    file: docker-post-installation.yml

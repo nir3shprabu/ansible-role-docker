@@ -3,10 +3,9 @@
   apt:
     update_cache: yes
 
-- name: Install packages on Ubuntu 
+- name: Install packages on Ubuntu
   apt:
     name: "{{ item }}"
-    state: latest
   with_items:
   - ca-certificates
   - curl
@@ -31,14 +30,12 @@
     state: present
     update_cache: true
 
-- name: Install Docker CE engine 
+- name: Install Docker CE engine
   apt:
     name: "{{ item }}"
-    state: latest
   with_items:
-  - docker-ce 
-  - docker-ce-cli 
-  - containerd.io 
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
   - docker-compose-plugin
-
 ...

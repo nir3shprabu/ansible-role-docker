@@ -1,0 +1,18 @@
+---
+dependencies: []
+
+galaxy_info:
+  role_name: docker
+  author: Niresh Prabu
+  description: Role to install the Docker CE engine and docker-compose from the official APT repo and perform post-installation steps on a Ubuntu target
+  license: "license (MIT)"
+  min_ansible_version: 2.12.9
+  platforms:
+    - name: Ubuntu
+      versions:
+        - focal
+  galaxy_tags:
+    - docker
+    - docker-compose
+
+allow_duplicates: true

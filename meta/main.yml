@@ -13,6 +13,7 @@ galaxy_info:
         - focal
   galaxy_tags:
     - docker
-    - docker-compose
+    - docker compose
 
 allow_duplicates: true
+...

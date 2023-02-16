@@ -2,7 +2,7 @@
 dependencies: []
 
 galaxy_info:
-  role_name: docker
+  role_name: ansible_role_docker
   author: Niresh Prabu
   description: Role to install the Docker CE engine and docker-compose from the official APT repo and perform post-installation steps on a Ubuntu target
   license: "license (MIT)"

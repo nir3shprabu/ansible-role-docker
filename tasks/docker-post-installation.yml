@@ -1,17 +1,16 @@
 ---
-  vars:
-    docker_users:
-      - 'ubuntu'
-  tasks:
-    - name: users | adding docker users (for use without sudo)
-      user:
-        name: "{{ item }}"
-        append: yes
-        groups: docker
-      become: true
-      with_items: '{{ docker_users }}'
+- name: Create "docker" group
+  group:
+   name: docker
+   state: present
 
+- name: Add remote "ubuntu" user to "docker" group
+  user:
+   name: ubuntu
+   group: docker
+   append: yes
+   
 # https://serverfault.com/a/930806
-# - name: Reset ssh connection to allow user changes to affect ansible user
-#   ansible.builtin.meta: reset_connection
+- name: Reset ssh connection to allow user changes to affect ansible user
+  ansible.builtin.meta: reset_connection
 ...

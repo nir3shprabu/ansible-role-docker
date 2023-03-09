@@ -1,15 +1,15 @@
 ---
 - name: Create "docker" group
-  group:
+  ansible.builtin.group:
    name: docker
    state: present
 
 - name: Add remote "ubuntu" user to "docker" group
-  user:
+  ansible.builtin.user:
    name: ubuntu
    group: docker
    append: yes
-   
+
 # https://serverfault.com/a/930806
 - name: Reset ssh connection to allow user changes to affect ansible user
   ansible.builtin.meta: reset_connection

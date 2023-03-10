@@ -7,8 +7,7 @@
 - name: Add remote "ubuntu" user to "docker" group
   ansible.builtin.user:
    name: ubuntu
-   group: ubuntu
-   groups: docker
+   group: docker
    append: true
 
 # https://serverfault.com/a/930806
